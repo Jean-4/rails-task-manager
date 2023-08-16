@@ -1,10 +1,10 @@
-<h1>Tasks</h1>
+<div class=index id=onvatrouver>
+<h1>Tasks   <i class="fa-solid fa-list-check"></i></h1>
 
 <ul>
   <% @tasks.each do |task| %>
       <h3>Title: <%= link_to task.title, task_path(task)%></h3>
-<%= </i> link_to 'Delete', destroy_task_path(task), method: :delete, data: { confirm: 'Are you sure?' } %>
-
   <% end %>
 </ul>
      <button> <%= link_to 'New Task', tasks_new_path %>
+</div>

@@ -2,20 +2,23 @@
 
 <%= form_with model: @task, url: task_path(@task), method: :patch, local: true do |f| %>
   <div>
-    <%= f.label :title %> <!-- Label for Title -->
-    <%= f.text_field :title %> <!-- Text field for Title -->
+    <%= f.label :title %> <!-- Label for Title --><br>
+    <%= f.text_field :title %> <!-- Text field for Title --><br><br><br>
   </div>
   <div>
-    <%= f.label :details %> <!-- Label for Details -->
-    <%= f.text_area :details %> <!-- Text area for Details -->
+    <%= f.label :details %> <!-- Label for Details --><br>
+    <%= f.text_area :details %> <!-- Text area for Details --><br>
   </div>
   <div>
-    <%= f.label :completed %> <!-- Label for Completed -->
-    <%= f.check_box :completed %> <!-- Check box for Completed -->
+    <%= f.label :completed %> <!-- Label for Completed --><br>
+    <%= f.check_box :completed %> <!-- Check box for Completed --><br>
   </div>
-  <div>
+  <div><br>
     <%= f.submit %> <!-- Submit button -->
   </div>
 <% end %>
-
+<%= link_to 'Delete', destroy_task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>
+<i class="fa-solid fa-trash fa-bounce"></i>
+<br>
+<br>
 <%= link_to 'Back to Task Details', task_path(@task) %>
